@@ -7,6 +7,7 @@ import LongURLInput from "./LongURLInput";
 import ShortURLResults from "./ShortURLResults";
 
 function App() {
+	const baseURLShortnerAPI = "https://www.shurl3.xyz/createshorturl/";
 	const [url, setUrl] = useState<string>("");
 	const [errorMessage, setErrorMessage] = useState<string>("");
 	const [networkErrorIsVisible, setNetworkErrorIsVisible] = useState<boolean>(false);
@@ -20,8 +21,10 @@ function App() {
 		}
 
 		setErrorMessage("");
+		
+		let apiReqPath = `${baseURLShortnerAPI}${url}`
 
-		axios.post(`https://www.shurl3.xyz/createshorturl/${url}`)
+		axios.post(apiReqPath)
 		.then(function(response) {
 			setShortURL(response.data.short_url);
 		})
