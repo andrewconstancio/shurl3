@@ -1,0 +1,9 @@
+/* .fa-copy:hover {
+    color: rgb(229, 126, 58);
+    transition: all 0.3s ease-out;
+} */
+
+.invisible-copied {
+    visibility: hidden;
+    transition: all 0.3s ease-out;
+}
