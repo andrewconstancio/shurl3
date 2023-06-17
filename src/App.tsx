@@ -22,7 +22,7 @@ function App() {
 
 		setErrorMessage("");
 		
-		let apiReqPath = `${baseURLShortnerAPI}${url}`
+		let apiReqPath = `${baseURLShortnerAPI}?long_url=${url}`
 
 		axios.post(apiReqPath)
 		.then(function(response) {
